@@ -21,6 +21,28 @@ class HandleStaloneViewController: UIViewController {
         })
     }
     
+    @IBAction func translationGesture(_ gesture: UIPanGestureRecognizer)
+    {
+        switch gesture.state
+        {
+        case .changed,.ended:
+            
+            let translation = gesture.translation(in: view)
+            
+            UIView.animate(withDuration: 0.1, animations: { 
+                
+                self.topSpaceToStalone.constant += translation.y
+                self.leftSpaceToStalone.constant += translation.x
+                self.view.layoutIfNeeded()
+            })
+            
+            gesture.setTranslation(CGPoint(), in: view)
+            
+            
+        default: break
+        }
+        
+    }
     
     
 }
