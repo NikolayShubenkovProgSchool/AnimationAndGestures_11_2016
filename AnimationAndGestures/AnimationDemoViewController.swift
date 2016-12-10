@@ -69,16 +69,27 @@ class AnimationDemoViewController: UIViewController {
     {
         let animationDuration = 1.0
         
+        let viewToAdd = redView.superview    == nil ? redView : blueView
+        let viewToRemove = redView.superview != nil ? redView : blueView
+        
+        btn.isEnabled = false
+        
         // анимация добавления и изьятия вью на каком-то другом вью
         UIView.transition(with: container,//на ком будет отображаться анимация
                           duration: animationDuration,
-                          options: .transitionCurlUp,
+                          options: [.transitionFlipFromLeft],
                           animations: {
                             
-                            self.redView.removeFromSuperview()
-                            self.container.addSubview(self.blueView)
+                            viewToRemove.removeFromSuperview()
+                            self.container.addSubview(viewToAdd)
         },
-                          completion: nil)
+                          //finished - отвечает за то, закончена ли была анимация
+                          //либо ее прервали
+                          completion: { finished in
+                            
+                            print("animation finished \(finished)")
+                            btn.isEnabled = true
+        })
     }
     
     @IBAction func animteMoving(_ sender: UIButton)
