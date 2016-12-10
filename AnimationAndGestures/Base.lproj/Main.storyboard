@@ -42,13 +42,23 @@
                                     <action selector="moveLotOfViews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pds-9u-ccj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ4-m6-08F">
+                                <rect key="frame" x="19" y="531" width="60" height="30"/>
+                                <state key="normal" title="rotate"/>
+                                <connections>
+                                    <action selector="roateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4K-1O-qpa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VJ4-m6-08F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="Ucs-rJ-mfX"/>
                             <constraint firstItem="QjI-mb-XnS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="drg-Vg-xdd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QjI-mb-XnS" secondAttribute="bottom" constant="8" id="e2J-JV-vtm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lgx-nG-HO0" secondAttribute="bottom" constant="8" id="fxP-tB-DMt"/>
                             <constraint firstItem="Lgx-nG-HO0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hsP-7E-bNV"/>
+                            <constraint firstItem="VJ4-m6-08F" firstAttribute="width" secondItem="Lgx-nG-HO0" secondAttribute="width" id="yCD-4u-3Ck"/>
+                            <constraint firstItem="Lgx-nG-HO0" firstAttribute="top" secondItem="VJ4-m6-08F" secondAttribute="bottom" constant="19" id="zXE-8S-UaH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mzE-fv-ICk"/>
@@ -82,6 +92,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qX6-YR-1aj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="wjm-5N-Mc0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

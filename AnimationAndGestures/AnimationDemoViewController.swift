@@ -60,6 +60,62 @@ class AnimationDemoViewController: UIViewController {
                             coloredView.removeFromSuperview()
             })
         }
+    }
+    
+    @IBAction func roateButtonPressed(_ sender: UIButton)
+    {
+        //На самом можно у UIView можно анимировать
+        //цвет фона - bakcgroundColor
+        //положение - frame либо как-то менять constraints
+        //прозрачность
+        //transform - особое свойство, задающее матрицу трансофрмации нашего вью
+        
+        let rotateView = UIView(frame: CGRect(x: 50, y: 250, width: 100, height: 100))
+        
+        func randomValue()->Float
+        {
+            let randomColorComponent = Float(arc4random_uniform(100)) / 100.0
+            return Float(randomColorComponent)
+        }
+        
+        rotateView.backgroundColor = UIColor(colorLiteralRed: randomValue(),
+            green: randomValue(),
+            blue: randomValue(),
+            alpha: 1)
+        
+        
+        view.addSubview(rotateView)
+        
+        //Keyframed animation
+        //анимация, выполняемая в несолько этапов/шагов
+        
+        UIView.animateKeyframes(withDuration: 2,
+                                delay: 0,
+                                options: .calculationModeLinear,
+                                animations: {
+        
+                                    UIView.addKeyframe(withRelativeStartTime: 0,
+                                                       relativeDuration: 1.0/3.0,
+                                                       animations: { 
+                                                        rotateView.transform = rotateView.transform.rotated(by: CGFloat(M_PI * 2.0 / 3.0))
+                                    })
+                                    
+                                    UIView.addKeyframe(withRelativeStartTime: 1.0/3.0,
+                                                       relativeDuration: 1.0/3.0,
+                                                       animations: {
+                                                        rotateView.transform = rotateView.transform.rotated(by: CGFloat(M_PI * 2.0 / 3.0))
+                                    })
+                                    
+                                    UIView.addKeyframe(withRelativeStartTime: 2.0/3.0,
+                                                       relativeDuration: 1.0/3.0,
+                                                       animations: {
+                                                        rotateView.transform = rotateView.transform.rotated(by: CGFloat(M_PI * 2.0 / 3.0))
+                                    })
+                                    
+                                    
+        },
+                                completion: nil)
+        
         
         
     }
