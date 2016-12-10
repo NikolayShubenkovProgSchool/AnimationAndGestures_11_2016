@@ -15,6 +15,9 @@ class AnimationDemoViewController: UIViewController {
     private let blueView = UIView()
     private let animationButton1 = UIButton()
     
+    private let movingView = UIView(frame: CGRect(x: -50, y: 150, width: 50, height: 50))
+    
+    
     //настало время настроить наш контроллер
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +37,38 @@ class AnimationDemoViewController: UIViewController {
         })
     }
     
+    @IBAction func animteMoving(_ sender: UIButton)
+    {
+    
+        let options:UIViewAnimationOptions = [UIViewAnimationOptions.autoreverse, UIViewAnimationOptions.repeat]
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: options,
+                       animations: {
+                        self.movingView.center.x += self.view.frame.size.width + 50
+                        self.movingView.backgroundColor = UIColor.cyan
+        },
+                       completion: { finished in
+        
+                        print("animation finished")
+        })
+    
+    }
+    
     private func setupViews()
     {
         setupContainer()
+        
+        setupMovingView()
         setupRedView()
         setupBlueView()
         setupAnimationButton()
+    }
+    
+    private func setupMovingView()
+    {
+        movingView.backgroundColor = UIColor.purple
+        view.addSubview(movingView)
     }
     
     private func setupAnimationButton()
