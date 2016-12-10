@@ -89,34 +89,38 @@ class AnimationDemoViewController: UIViewController {
         //Keyframed animation
         //анимация, выполняемая в несолько этапов/шагов
         
-        UIView.animateKeyframes(withDuration: 2,
+        UIView.animateKeyframes(withDuration: 5,
                                 delay: 0,
-                                options: .calculationModeLinear,
+                                options: .calculationModePaced,//paced - в этом случае система сама
+                                                               //расчитает время начала и длительность 
+                                                               //каждой фазы анимации
                                 animations: {
         
                                     UIView.addKeyframe(withRelativeStartTime: 0,
-                                                       relativeDuration: 1.0/3.0,
+                                                       relativeDuration: 0,
                                                        animations: { 
                                                         rotateView.transform = rotateView.transform.rotated(by: CGFloat(M_PI * 2.0 / 3.0))
                                     })
                                     
-                                    UIView.addKeyframe(withRelativeStartTime: 1.0/3.0,
-                                                       relativeDuration: 1.0/3.0,
+                                    UIView.addKeyframe(withRelativeStartTime: 0,
+                                                       relativeDuration: 0,
                                                        animations: {
                                                         rotateView.transform = rotateView.transform.rotated(by: CGFloat(M_PI * 2.0 / 3.0))
                                     })
                                     
-                                    UIView.addKeyframe(withRelativeStartTime: 2.0/3.0,
-                                                       relativeDuration: 1.0/3.0,
+                                    UIView.addKeyframe(withRelativeStartTime: 0,
+                                                       relativeDuration: 0,
                                                        animations: {
                                                         rotateView.transform = rotateView.transform.rotated(by: CGFloat(M_PI * 2.0 / 3.0))
                                     })
                                     
                                     
         },
-                                completion: nil)
+                                completion: { _ in
+                                    rotateView.removeFromSuperview()
+        })
         
-        
+    
         
     }
     
