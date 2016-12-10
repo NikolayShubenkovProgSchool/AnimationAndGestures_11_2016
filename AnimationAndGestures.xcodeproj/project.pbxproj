@@ -12,6 +12,7 @@
 		4F5FA1A01DFBE10000A0922D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FA19F1DFBE10000A0922D /* Assets.xcassets */; };
 		4F5FA1A31DFBE10000A0922D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FA1A11DFBE10000A0922D /* LaunchScreen.storyboard */; };
 		4F5FA1AB1DFBE2EB00A0922D /* AnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FA1AA1DFBE2EB00A0922D /* AnimationDemoViewController.swift */; };
+		4F5FA1AD1DFC21F200A0922D /* AutoLayoutDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FA1AC1DFC21F200A0922D /* AutoLayoutDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4F5FA1A21DFBE10000A0922D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F5FA1A41DFBE10000A0922D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F5FA1AA1DFBE2EB00A0922D /* AnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDemoViewController.swift; sourceTree = "<group>"; };
+		4F5FA1AC1DFC21F200A0922D /* AutoLayoutDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4F5FA1981DFBE10000A0922D /* AppDelegate.swift */,
 				4F5FA19C1DFBE10000A0922D /* Main.storyboard */,
+				4F5FA1AC1DFC21F200A0922D /* AutoLayoutDemoViewController.swift */,
 				4F5FA1AA1DFBE2EB00A0922D /* AnimationDemoViewController.swift */,
 				4F5FA19F1DFBE10000A0922D /* Assets.xcassets */,
 				4F5FA1A11DFBE10000A0922D /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				4F5FA1AB1DFBE2EB00A0922D /* AnimationDemoViewController.swift in Sources */,
 				4F5FA1991DFBE10000A0922D /* AppDelegate.swift in Sources */,
+				4F5FA1AD1DFC21F200A0922D /* AutoLayoutDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				4F5FA1A91DFBE10000A0922D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

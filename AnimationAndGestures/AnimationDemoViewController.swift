@@ -8,6 +8,24 @@
 
 import UIKit
 
+extension UIColor
+{
+    class func randColor()->UIColor
+    {
+        return UIColor(hue: randomValue(),
+                       saturation: randomValue(),
+                       brightness: 1,
+                       alpha: 1)
+
+    }
+}
+
+func randomValue()->CGFloat
+{
+    let randomColorComponent = CGFloat(arc4random_uniform(100)) / 100.0
+    return CGFloat(randomColorComponent)
+}
+
 class AnimationDemoViewController: UIViewController {
     
     private let container = UIView()
@@ -282,11 +300,5 @@ class AnimationDemoViewController: UIViewController {
     }
     
     //MARK: - Other
-    
-    private func randomValue()->CGFloat
-    {
-        let randomColorComponent = CGFloat(arc4random_uniform(100)) / 100.0
-        return CGFloat(randomColorComponent)
-    }
     
 }

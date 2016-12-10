@@ -111,6 +111,7 @@
                     <connections>
                         <segue destination="TtT-5U-7b5" kind="relationship" relationship="viewControllers" id="dAx-4Q-6jx"/>
                         <segue destination="Q9y-mo-hZ5" kind="relationship" relationship="viewControllers" id="7t9-vX-WMt"/>
+                        <segue destination="H9U-Mr-dWZ" kind="relationship" relationship="viewControllers" id="JmX-9G-2Yd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCp-OH-CJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,11 +137,11 @@
             </objects>
             <point key="canvasLocation" x="2025" y="861"/>
         </scene>
-        <!--Item-->
+        <!--FinalFight-->
         <scene sceneID="1n1-zI-Wkl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q9y-mo-hZ5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ru6-Er-Fiv"/>
+                    <tabBarItem key="tabBarItem" title="FinalFight" id="Ru6-Er-Fiv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ivw-fa-s1b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -154,6 +155,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GV8-N0-ctf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268" y="861"/>
+        </scene>
+        <!--Autolayout-->
+        <scene sceneID="BXV-sS-p3o">
+            <objects>
+                <viewController id="H9U-Mr-dWZ" customClass="AutoLayoutDemoViewController" customModule="AnimationAndGestures" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="80K-p2-O2E"/>
+                        <viewControllerLayoutGuide type="bottom" id="0fq-R5-JXC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YTL-6p-Kxc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK6-wI-xYr" userLabel="TextContainer">
+                                <rect key="frame" x="16" y="120" width="343" height="36.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoU-xj-Ija">
+                                        <rect key="frame" x="8" y="8" width="327" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="AoU-xj-Ija" firstAttribute="leading" secondItem="lK6-wI-xYr" secondAttribute="leading" constant="8" id="1gq-YS-Bt4"/>
+                                    <constraint firstAttribute="trailing" secondItem="AoU-xj-Ija" secondAttribute="trailing" constant="8" id="6mu-Q5-5ME"/>
+                                    <constraint firstAttribute="bottom" secondItem="AoU-xj-Ija" secondAttribute="bottom" constant="8" id="ZKJ-Lb-Foc"/>
+                                    <constraint firstItem="AoU-xj-Ija" firstAttribute="top" secondItem="lK6-wI-xYr" secondAttribute="top" constant="8" id="cSM-Ag-TaZ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21p-Zt-sxc">
+                                <rect key="frame" x="164" y="572" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="animateWithAutoLayout:" destination="H9U-Mr-dWZ" eventType="touchUpInside" id="jGh-LW-FwE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="lK6-wI-xYr" secondAttribute="leading" id="1n4-RZ-82b"/>
+                            <constraint firstItem="21p-Zt-sxc" firstAttribute="centerX" secondItem="YTL-6p-Kxc" secondAttribute="centerX" id="9rG-dY-X5f"/>
+                            <constraint firstItem="lK6-wI-xYr" firstAttribute="top" secondItem="80K-p2-O2E" secondAttribute="bottom" constant="100" id="Any-ff-AUL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lK6-wI-xYr" secondAttribute="trailing" id="FVR-j8-tBi"/>
+                            <constraint firstItem="0fq-R5-JXC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lK6-wI-xYr" secondAttribute="bottom" constant="100" id="f9F-MB-UpX"/>
+                            <constraint firstItem="0fq-R5-JXC" firstAttribute="top" secondItem="21p-Zt-sxc" secondAttribute="bottom" constant="16" id="htb-bE-xki"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Autolayout" id="BeE-77-t2P"/>
+                    <connections>
+                        <outlet property="textContainer" destination="lK6-wI-xYr" id="5yN-8F-bKf"/>
+                        <outlet property="textToShow" destination="AoU-xj-Ija" id="aFp-Bw-ang"/>
+                        <outlet property="topSpace" destination="Any-ff-AUL" id="dEJ-tJ-9Sb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xst-Qt-k4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258.4000000000001" y="1549.4752623688157"/>
         </scene>
     </scenes>
 </document>
