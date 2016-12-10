@@ -28,7 +28,11 @@ class FightViewController: UIViewController {
         
         let duration = 2.5
         let delay = 0.0
-        let options = UIViewAnimationOptions.curveEaseInOut
+        let options:UIViewAnimationOptions = [UIViewAnimationOptions.curveEaseInOut,
+                                              //позволит вью обрабатывать касания пользователя
+                                              //во время выполнения анимации
+                                              UIViewAnimationOptions.beginFromCurrentState,
+                                              UIViewAnimationOptions.allowUserInteraction]
         
         //степень колебаний. 0 - 1. 1 - анимация завершиться без колебания
         //чем ближе к 0, тем больше будет колебаний
