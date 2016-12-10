@@ -80,6 +80,63 @@
             </objects>
             <point key="canvasLocation" x="2015.2" y="138.98050974512745"/>
         </scene>
+        <!--Жесты-->
+        <scene sceneID="dot-JL-Z6c">
+            <objects>
+                <viewController id="Xnm-E7-N9V" customClass="HandleStaloneViewController" customModule="AnimationAndGestures" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1vD-1H-eog"/>
+                        <viewControllerLayoutGuide type="bottom" id="TMw-Nv-NCl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tgh-v1-10l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHN-TG-ctT" userLabel="StaloneContainer">
+                                <rect key="frame" x="58" y="137" width="204" height="139"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hero2" translatesAutoresizingMaskIntoConstraints="NO" id="Kj6-Ak-gFG">
+                                        <rect key="frame" x="33.5" y="24" width="137" height="91"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="137" id="mb3-LJ-Scj"/>
+                                            <constraint firstAttribute="width" secondItem="Kj6-Ak-gFG" secondAttribute="height" multiplier="137:91" id="zvs-E5-bW5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5sm-62-r3P" appends="YES" id="0hI-df-7Oj"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="Cul-vv-PmF"/>
+                                    <constraint firstAttribute="height" constant="139" id="Keb-Rk-bLe"/>
+                                    <constraint firstItem="Kj6-Ak-gFG" firstAttribute="centerY" secondItem="pHN-TG-ctT" secondAttribute="centerY" id="tDY-wz-8dg"/>
+                                    <constraint firstItem="Kj6-Ak-gFG" firstAttribute="centerX" secondItem="pHN-TG-ctT" secondAttribute="centerX" id="yx2-cY-Yge"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pHN-TG-ctT" firstAttribute="leading" secondItem="Tgh-v1-10l" secondAttribute="leadingMargin" constant="42" id="NID-di-LsT"/>
+                            <constraint firstItem="pHN-TG-ctT" firstAttribute="top" secondItem="1vD-1H-eog" secondAttribute="bottom" constant="117" id="Obk-Jb-L5x"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Жесты" id="nbT-m1-MJc"/>
+                    <connections>
+                        <outlet property="leftSpaceToStalone" destination="NID-di-LsT" id="Woo-d3-UcR"/>
+                        <outlet property="topSpaceToStalone" destination="Obk-Jb-L5x" id="dKW-GQ-h6H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5w-bT-1iQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="5sm-62-r3P" userLabel="ChangeBackgroundGesture">
+                    <connections>
+                        <action selector="changeBackgroundGesture:" destination="Xnm-E7-N9V" id="Kee-lP-f6c"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1278.75" y="-557.5"/>
+        </scene>
         <!--Анимация-->
         <scene sceneID="p1d-E2-Bdm">
             <objects>
@@ -110,6 +167,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="Xnm-E7-N9V" kind="relationship" relationship="viewControllers" id="Lc7-GP-tgh"/>
                         <segue destination="TtT-5U-7b5" kind="relationship" relationship="viewControllers" id="dAx-4Q-6jx"/>
                         <segue destination="Q9y-mo-hZ5" kind="relationship" relationship="viewControllers" id="7t9-vX-WMt"/>
                         <segue destination="H9U-Mr-dWZ" kind="relationship" relationship="viewControllers" id="JmX-9G-2Yd"/>
