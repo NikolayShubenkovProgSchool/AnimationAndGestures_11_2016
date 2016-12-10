@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HandleStaloneViewController: UIViewController {
+class HandleStaloneViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet var stalone: UIImageView!
     @IBOutlet var staloneWidth: NSLayoutConstraint!
@@ -25,8 +25,14 @@ class HandleStaloneViewController: UIViewController {
     {
         let rotation = UIRotationGestureRecognizer(target: self,
                                                    action: #selector(HandleStaloneViewController.rotateGesture(_:)))
-        
+        rotation.delegate = self
         stalone.addGestureRecognizer(rotation)
+    }
+    
+    //MARK: - UIGestureRecognizer Delegate
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    {
+        return true
     }
     
     //MARK: - UI Events
