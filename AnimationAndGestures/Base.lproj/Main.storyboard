@@ -104,6 +104,7 @@
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="5sm-62-r3P" appends="YES" id="0hI-df-7Oj"/>
+                                            <outletCollection property="gestureRecognizers" destination="jhs-DX-AL3" appends="YES" id="D6D-Jt-6qx"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -128,6 +129,8 @@
                     <tabBarItem key="tabBarItem" title="Жесты" id="nbT-m1-MJc"/>
                     <connections>
                         <outlet property="leftSpaceToStalone" destination="NID-di-LsT" id="Woo-d3-UcR"/>
+                        <outlet property="stalone" destination="Kj6-Ak-gFG" id="u6V-M7-hNj"/>
+                        <outlet property="staloneWidth" destination="mb3-LJ-Scj" id="QpY-xG-IN4"/>
                         <outlet property="topSpaceToStalone" destination="Obk-Jb-L5x" id="dKW-GQ-h6H"/>
                     </connections>
                 </viewController>
@@ -142,6 +145,11 @@
                         <action selector="translationGesture:" destination="Xnm-E7-N9V" id="cK8-H4-XWF"/>
                     </connections>
                 </panGestureRecognizer>
+                <pinchGestureRecognizer id="jhs-DX-AL3" userLabel="ScaleGesture">
+                    <connections>
+                        <action selector="scaleGesture:" destination="Xnm-E7-N9V" id="VEc-y1-9j7"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1278.75" y="-557.5"/>
         </scene>
