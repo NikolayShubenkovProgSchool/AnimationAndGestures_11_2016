@@ -68,12 +68,17 @@ class AnimationDemoViewController: UIViewController {
     func animationButton1Pressed(btn:UIButton)
     {
         let animationDuration = 1.0
-        UIView.animate(withDuration: animationDuration,
-                       animations: {
-                        //тут мы пишем все, что хотим санимировать
-                        self.view.backgroundColor = UIColor.yellow
-                        self.container.center.y += 20
-        })
+        
+        // анимация добавления и изьятия вью на каком-то другом вью
+        UIView.transition(with: container,//на ком будет отображаться анимация
+                          duration: animationDuration,
+                          options: .transitionCurlUp,
+                          animations: {
+                            
+                            self.redView.removeFromSuperview()
+                            self.container.addSubview(self.blueView)
+        },
+                          completion: nil)
     }
     
     @IBAction func animteMoving(_ sender: UIButton)
