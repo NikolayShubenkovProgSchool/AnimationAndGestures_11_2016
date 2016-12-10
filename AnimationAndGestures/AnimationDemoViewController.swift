@@ -26,6 +26,42 @@ class AnimationDemoViewController: UIViewController {
     
     //MARK: - UIEvents
 
+    @IBAction func moveLotOfViews(_ sender: UIButton) {
+        
+        //Создадим новый вью
+        //зададим ему цвет фона
+        //переместим его вправо
+        //удалим с экрана
+        
+        
+        let coloredView = UIView()
+        coloredView.backgroundColor = UIColor.blue
+        view.addSubview(coloredView)
+        
+        let size:CGFloat = CGFloat( arc4random_uniform(40)) + 20
+        
+        let yPosition:CGFloat = 100 + CGFloat( arc4random_uniform(350))
+        let color = UIColor.yellow
+        let duration = 1.5
+        
+        coloredView.frame = CGRect(x: -size, y: yPosition, width: size, height: size)
+        
+        UIView.animate(withDuration: duration,
+                       delay: 0,
+                       options: .curveEaseInOut,
+                       animations: {
+        
+                        coloredView.center.x += self.view.frame.width + size
+                        coloredView.backgroundColor = color
+        },
+                       completion: { animationFinished in
+                        coloredView.removeFromSuperview()
+        })
+        
+        
+    }
+    
+    
     func animationButton1Pressed(btn:UIButton)
     {
         let animationDuration = 1.0

@@ -32,9 +32,21 @@
                                     <action selector="animteMoving:" destination="BYZ-38-t0r" eventType="touchUpInside" id="neo-LF-pmZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjI-mb-XnS">
+                                <rect key="frame" x="210" y="580" width="149" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="GGB-I2-uY4"/>
+                                </constraints>
+                                <state key="normal" title="move Lot Of Views"/>
+                                <connections>
+                                    <action selector="moveLotOfViews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pds-9u-ccj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QjI-mb-XnS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="drg-Vg-xdd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QjI-mb-XnS" secondAttribute="bottom" constant="8" id="e2J-JV-vtm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lgx-nG-HO0" secondAttribute="bottom" constant="8" id="fxP-tB-DMt"/>
                             <constraint firstItem="Lgx-nG-HO0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hsP-7E-bNV"/>
                         </constraints>
