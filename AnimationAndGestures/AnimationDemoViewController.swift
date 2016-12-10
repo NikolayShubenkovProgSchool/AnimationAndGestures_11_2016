@@ -123,50 +123,53 @@ class AnimationDemoViewController: UIViewController {
     
     @IBAction func moveAlongPath(_ sender: UIButton)
     {
-        //создали вью
-        let square = UIView()
+        for _ in 0...50 {
         
-        let size = 40
-        let frame = CGRect(x: 55,
-                           y: 300,
-                           width: size,
-                           height: size)
-        
-        
-        
-        square.frame = frame
-        
-        square.backgroundColor = UIColor(hue: randomValue(),
-                                         saturation: randomValue(),
-                                         brightness: 1,
-                                         alpha: 1)
-        
-        view.addSubview(square)
-        
-        //создадим траекторию, по которой наш вью будет перемещаться
-        let path = UIBezierPath()
-        
-        path.move(to: CGPoint(x: 20, y: 250))
-        
-        path.addCurve(to: CGPoint(x:301,y:250),
-                      controlPoint1: CGPoint(x:140,y:390),
-                      controlPoint2: CGPoint(x:178,y:100))
-        
-        //Создали объект анимация.
-        //казали, что он меняет позицию вью
-        let animation = CAKeyframeAnimation(keyPath: "position")
-        animation.path = path.cgPath
-        
-        //длительноть
-        animation.duration = 2
-        animation.repeatCount = Float.infinity
-        
-        //теперь вью будет вращается по траектории
-        animation.rotationMode = kCAAnimationRotateAuto
-        
-        square.layer.add(animation, forKey: nil)
-        
-        
+            //создали вью
+            let square = UIView()
+            
+            let size = 20 + CGFloat(arc4random_uniform(100))
+            let frame = CGRect(x: 55,
+                               y: 300,
+                               width: size,
+                               height: size)
+            
+            square.frame = frame
+            
+            square.backgroundColor = UIColor(hue: randomValue(),
+                                             saturation: randomValue(),
+                                             brightness: 1,
+                                             alpha: 1)
+            
+            view.addSubview(square)
+            
+            //создадим траекторию, по которой наш вью будет перемещаться
+            let path = UIBezierPath()
+            
+            let yOffset = Int(arc4random_uniform(300))
+                
+            path.move(to: CGPoint(x:-100, y: 50 + yOffset))
+            
+            path.addCurve(to: CGPoint(x:400,y:250 + yOffset),
+                          controlPoint1: CGPoint(x:140,y:390 + yOffset),
+                          controlPoint2: CGPoint(x:178,y:100 + yOffset))
+            
+            //Создали объект анимация.
+            //казали, что он меняет позицию вью
+            let animation = CAKeyframeAnimation(keyPath: "position")
+            animation.path = path.cgPath
+            
+            //длительноть
+            animation.duration = 4 + TimeInterval( Double(arc4random_uniform(100)) / 100.0 * 2.0  )
+            animation.repeatCount = Float.infinity
+            
+            animation.beginTime = CACurrentMediaTime() + TimeInterval( Double(arc4random_uniform(100)) / 100.0 * 2.0  )
+            
+            //теперь вью будет вращается по траектории
+            animation.rotationMode = kCAAnimationRotateAuto
+            
+            square.layer.add(animation, forKey: nil)
+        }
     }
     
     func animationButton1Pressed(btn:UIButton)
